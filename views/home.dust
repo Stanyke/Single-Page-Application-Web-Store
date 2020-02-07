@@ -1,0 +1,77 @@
+{>"layout" /}
+
+{<body}
+
+    {#myItems}
+        <div class="well itemStore">
+            
+            <h4><img style="width: 50px;" src="./uploaded_item_images/{image_name}"> {item_name}
+
+            <button class="btn btn-info pull-right" data-toggle="collapse" href="#myItems_{id}" aria-expanded="false" aria-controls="myItems_{id}">
+                <span class="fa fa-pied-piper" aria-hidden="true"></span>
+            <button></h4>
+
+            <div class="collapse" id="myItems_{id}">
+                {description}
+            </div>
+
+        </div>
+
+    {/myItems}
+
+    <!-- Modal -->
+    <div class="modal fade" id="AddNewItem" tabindex="-1" role="dialog" aria-labelledby="AddNewItemTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <form method="post" action="/api/add-item" enctype="multipart/form-data">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="AddNewItemTitle">Add New Item To Store</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    
+                    <div class="modal-body">
+                    
+
+                        <div class="form-group">
+                            <label><b>Title</b></label>
+                            <input type="text" class="form-control" name="itemName" placeholder="Item's Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label><b>Description</b></label>
+                            <textarea class="form-control" name="itemDescription" rows="3" placeholder="Item's Description"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label><b>Categories</b></label>
+                            <select class="form-control" name="itemCategory">
+                                <option value="clothing">Clothing</option>
+                                <option value="mobile phones">Mobile Phones</option>
+                                <option value="computers">Computers</option>
+                                <option value="device accesories">Device Accesories</option>
+                                <option value="house appliances">House Appliances</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label><b>Image</b></label>
+                            <input type="file" class="form-control-file" name="image">
+                        </div>
+                    
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-danger">Publish</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+{/body}

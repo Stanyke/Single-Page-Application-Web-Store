@@ -1,0 +1,29 @@
+body
+{
+    background-color: black;
+    margin-top: 40px;
+}
+
+.itemStore
+{
+    color: blanchedalmond;
+}
+
+div[title]
+{
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    font-family: times-new-roman;
+}
+
+.modal-body
+{
+    height: 350px;
+    overflow-y: auto;
+}
+
+.card-text
+{
+    color: black;
+}

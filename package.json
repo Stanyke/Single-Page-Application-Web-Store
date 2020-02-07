@@ -1,0 +1,35 @@
+{
+  "name": "single-page-application-web-store",
+  "version": "1.0.0",
+  "description": "This is a single page application (SPA) for a web store with CRUD operations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stanyke/Single-Page-Application-Web-Store.git"
+  },
+  "keywords": [
+    "Single Page Application",
+    "Store"
+  ],
+  "author": "Stanley Chibuike",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Stanyke/Single-Page-Application-Web-Store/issues"
+  },
+  "homepage": "https://github.com/Stanyke/Single-Page-Application-Web-Store#readme",
+  "dependencies": {
+    "body-parser": "*",
+    "consolidate": "*",
+    "dust": "*",
+    "dustjs-helpers": "*",
+    "dustjs-linkedin": "*",
+    "express": "*",
+    "formidable": "^1.2.1",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "pg": "*"
+  }
+}

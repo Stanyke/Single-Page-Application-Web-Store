@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shopping Store</title>
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div title>Shopping Store</div>
+
+        <button class="btn btn-success btn-block" data-toggle="modal" data-target="#AddNewItem">
+            Add New Item <i class="fa fa-pencil"></i>
+        </button>
+
+        <br/>
+        <br/>
+        
+        <div class="row">
+            <div class="col-md-offset-2 col-md-7">
+                {+body /}
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+</body>
+</html>
