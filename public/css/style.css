@@ -50,7 +50,8 @@ div[title]
     margin: 0px 0px 5px;
 }
 
-.collapse p#uo, .collapse p#eo
+.collapse p#category, .collapse p#uo, .collapse p#eo
 {
     font-size: 12px;
+    color: #5F6059;
 }

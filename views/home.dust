@@ -17,6 +17,7 @@
                 <br/>
                 <hr/>
 
+                <p id="category"><b>Category:</b> {item_category}</p>
                 <p id="uo"><b>Uploaded On:</b> {created_at}</p>
                 <p id="eo"><b>Edited On:</b> {updated_on}</p>
 
