@@ -23,8 +23,14 @@
         <br/>
         
         <div class="row">
-            <div class="col-md-offset-2 col-md-7">
-                {+body /}
+            <div class="col-md-12">
+                <div class="row justify-content-md-center">
+
+                <div class="col-md-8">
+                    {+body /}
+                </div>
+
+                </div>
             </div>
         </div>
 
@@ -32,5 +38,6 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="/js/bootstrap.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>

@@ -2,24 +2,106 @@
 
 {<body}
 
-    {#myItems}
-        <div class="well itemStore">
-            
-            <h4><img style="width: 50px;" src="./uploaded_item_images/{image_name}"> {item_name}
 
-            <button class="btn btn-info pull-right" data-toggle="collapse" href="#myItems_{id}" aria-expanded="false" aria-controls="myItems_{id}">
-                <span class="fa fa-pied-piper" aria-hidden="true"></span>
-            <button></h4>
+    {#myItems}
+        <div class="itemStore">
+            
+            <p title><img style="width: 70px;" src="./uploaded_item_images/{image_name}"> {item_name}
+
+            <span class="btn btn-danger pull-right fa fa-plus-circle" data-toggle="collapse" href="#myItems_{id}" aria-expanded="false" aria-controls="myItems_{id}" aria-hidden="true"></span>
+            </p>
 
             <div class="collapse" id="myItems_{id}">
                 {description}
+
+                <br/>
+                <hr/>
+
+                <p id="uo"><b>Uploaded On:</b> {created_at}</p>
+                <p id="eo"><b>Edited On:</b> {updated_on}</p>
+
+                <hr/>
+
+                <button class="btn btn-success edit-item"
+                    data-toggle="modal"
+                    data-target="#EditItemInStore"
+                    data-id="{id}"
+                    data-name="{item_name}"
+                    data-description="{description}"
+                    data-category="{item_category}">
+
+                    <span class="fa fa-edit" aria-hidden="true"></span>
+
+                </button>
+
+                <button class="btn btn-danger delete-item" data-id="{id}" itemName="{item_name}">
+                    <span class="fa fa-trash" aria-hidden="true"></span>
+                </button>
             </div>
 
         </div>
 
+        <br/>
+
+
+        <!-- Edit Item's Modal -->
+        <div class="modal fade" id="EditItemInStore" tabindex="-1" role="dialog" aria-labelledby="EditItemInStore" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+
+                    <form method="post" action="/api/edit-item">
+
+                        <input type="hidden" id="edit-item-id" name="id" />
+
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="EditItemInStoreTitle">Edit Item In Store</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        
+                        <div class="modal-body">
+                        
+
+                            <div class="form-group">
+                                <label><b>Title</b></label>
+                                <input type="text" class="form-control" name="itemName" placeholder="Item's Name" id="edit-item-itemName">
+                            </div>
+
+                            <div class="form-group">
+                                <label><b>Description</b></label>
+                                <textarea class="form-control" name="itemDescription" rows="3" placeholder="Item's Description" id="edit-item-itemDescription"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label><b>Categories</b></label>
+                                <select class="form-control" name="itemCategory" id="edit-item-itemCategory">
+                                    <option value="clothing">Clothing</option>
+                                    <option value="mobile phones">Mobile Phones</option>
+                                    <option value="computers">Computers</option>
+                                    <option value="device accesories">Device Accesories</option>
+                                    <option value="house appliances">House Appliances</option>
+                                </select>
+                            </div>
+                        
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-danger">Update</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Edit Item's Modal Ending -->
+
+
     {/myItems}
 
-    <!-- Modal -->
+
+    <!-- Add New Item's Modal -->
     <div class="modal fade" id="AddNewItem" tabindex="-1" role="dialog" aria-labelledby="AddNewItemTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -73,5 +155,7 @@
             </div>
         </div>
     </div>
+    <!-- Add New Item's Modal Ending -->
+
 
 {/body}

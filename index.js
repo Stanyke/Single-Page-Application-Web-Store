@@ -35,7 +35,10 @@ app.get('/', (req, res) =>
         res.render('home', {myItems: TheRes.rows});
     });
     
-})
+});
+
+
+
 
 app.post('/api/add-item', (req, res) =>
 {
@@ -74,9 +77,9 @@ app.post('/api/add-item', (req, res) =>
                     }
                     else
                     {
-                        const realvalues = [fields.itemName, fields.itemDescription, ImageAndPath, fields.itemCategory, CurrentTimeAndDay];
+                        const realvalues = [fields.itemName, fields.itemDescription, ImageAndPath, fields.itemCategory, CurrentTimeAndDay, CurrentTimeAndDay];
 
-                        client.query(`INSERT INTO store (item_name, description, image_name, item_category, time) VALUES ($1, $2, $3, $4, $5)`, realvalues, (TheErr, TheRes) =>
+                        client.query(`INSERT INTO store (item_name, description, image_name, item_category, created_at, updated_on) VALUES ($1, $2, $3, $4, $5, $6)`, realvalues, (TheErr, TheRes) =>
                         {
                             if (TheErr)
                             {
@@ -109,7 +112,80 @@ app.post('/api/add-item', (req, res) =>
         res.redirect('/');
         console.log('Empty Field Was Noted');
     }
-})
+});
+
+
+
+
+app.delete('/api/delete-item/:id', (req, res) =>
+{
+    client.query(`SELECT * FROM store WHERE id = $1`, [req.params.id], (WeErr, WeRes) =>
+    {
+        if (WeErr)
+        {
+            res.status(500).send("We Encoutered An Error Getting Item Details");
+            console.log("We Encoutered An Error Getting Item Details");
+        }
+
+        if (WeRes.rows[0])
+        {
+            const ImageName = WeRes.rows[0].image_name;
+
+            client.query(`DELETE FROM store WHERE id = $1`, [req.params.id], (TheErr, TheRes) =>
+            {
+                if (TheErr)
+                {
+                    res.status(500).send("We Encoutered An Error Deleting Item");
+                    console.log("We Encoutered An Error Deleting Item");
+                }
+
+                if (TheRes)
+                {
+                    //Delete the file from image folder
+                    fs.unlink("./public/uploaded_item_images/"+ImageName, (err) =>
+                    {
+                        if (err)
+                        {
+                            throw err;
+                        }
+                        else
+                        {
+                            console.log('Item Successfully Deleted From Store');
+                            res.sendStatus(200);
+                        }
+                    });
+                }
+            });
+        }
+    });
+});
+
+
+
+
+app.post('/api/edit-item', (req, res) =>
+{
+    const CurrentTimeAndDay = Date();
+
+    const realvalues = [req.body.itemName, req.body.itemDescription, req.body.itemCategory, CurrentTimeAndDay, req.body.id];
+    
+    client.query(`UPDATE store SET item_name = $1, description = $2, item_category = $3, updated_on = $4 WHERE id = $5`, realvalues, (TheErr, TheRes) =>
+    {
+        if (TheErr)
+        {
+            res.status(500).send("We Encoutered An Error Updating Item In Store");
+            console.log("We Encoutered An Error Updating Item In Store");
+        }
+
+        if (TheRes)
+        {
+            console.log('Item In Store Successfully Updated');
+            res.redirect('/');
+        }
+    });
+});
+
+
 
 const port = process.env.PORT || 3000;
 

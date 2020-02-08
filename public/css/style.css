@@ -4,11 +4,6 @@ body
     margin-top: 40px;
 }
 
-.itemStore
-{
-    color: blanchedalmond;
-}
-
 div[title]
 {
     text-align: center;
@@ -26,4 +21,36 @@ div[title]
 .card-text
 {
     color: black;
+}
+
+.collapse
+{
+    color: #C70039;
+}
+
+.itemStore
+{
+    color: black;
+    background-color: whitesmoke;
+}
+
+.itemStore p[title]
+{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.edit-item
+{
+    margin: 0px 10px 5px;
+}
+
+.delete-item
+{
+    margin: 0px 0px 5px;
+}
+
+.collapse p#uo, .collapse p#eo
+{
+    font-size: 12px;
 }
