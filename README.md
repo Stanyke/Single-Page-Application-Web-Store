@@ -11,14 +11,16 @@ Also the files that can be uploaded are just images with extension either **.jpg
 
 **How This Web Application Works**
 
-1. When page loads it gets the data from the database with simple route call back function.
+1. In the views folder, **layout.dust** serves like a wrapping element for **home.dust**.
 
-2. Adding new item's route is located in the index.js.
+2. When page loads it gets the data from the database with simple route call back function.
 
-3. Deleting item is proceesed with ajax in jQuery located in *public/js/script.js* and then get response from it's route in the index.js.
+3. Adding new item's route is located in the index.js.
 
-4. Editing item's route is located in the index.js.
+4. Deleting item is proceesed with ajax in jQuery located in *public/js/script.js* and then get response from it's route in the index.js.
 
-5. The styling and JavaScript files can be found in the public folder.
+5. Editing item's route is located in the index.js.
+
+6. The styling and JavaScript files can be found in the public folder.
 
 **Detailed Can Be Found With The index.js File**
