@@ -73,7 +73,7 @@ app.post('/api/add-item', (req, res) =>
                 var oldImagePath = files.image.path;
 
                 //New name of image file which should be stored in folder *images* and saved as Current Date and Time, finally merging it's extension
-                var newImagePath = './public/uploaded_item_images/' + dateTime+getImageFileExtension;
+                var newImagePath = '/uploaded_item_images/' + dateTime+getImageFileExtension;
 
                 // New image name with it's extension joined together
                 const ImageAndPath = dateTime+getImageFileExtension;
