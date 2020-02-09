@@ -109,6 +109,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
 
+                <p align="center" style="color: red;">Due to Heroku immutable file system, You can't make uploads</p>
                 <form method="post" action="/api/add-item" enctype="multipart/form-data">
 
                     <div class="modal-header">
