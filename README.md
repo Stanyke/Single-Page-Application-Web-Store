@@ -23,4 +23,4 @@ Also the files that can be uploaded are just images with extension either **.jpg
 
 6. The styling and JavaScript files can be found in the public folder.
 
-**Detailed Can Be Found With The index.js File**
+**Detailed Comments Can Be Found With The index.js File For Better Understanding Of The App Route Processes**
