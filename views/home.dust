@@ -82,6 +82,8 @@
                                     <option value="computers">Computers</option>
                                     <option value="device accesories">Device Accesories</option>
                                     <option value="house appliances">House Appliances</option>
+                                    <option value="decorations">Decorations</option>
+                                    <option value="others">Others</option>
                                 </select>
                             </div>
                         
@@ -137,6 +139,8 @@
                                 <option value="computers">Computers</option>
                                 <option value="device accesories">Device Accesories</option>
                                 <option value="house appliances">House Appliances</option>
+                                <option value="decorations">Decorations</option>
+                                <option value="others">Others</option>
                             </select>
                         </div>
 
