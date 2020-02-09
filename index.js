@@ -79,7 +79,7 @@ app.post('/api/add-item', (req, res) =>
                 const ImageAndPath = dateTime+getImageFileExtension;
 
                 // Current Time & Date
-                const CurrentTimeAndDay = Date();
+                const CurrentTimeAndDay = Date(); 
                 
                 // Rename old image name with new name, moving it to its's specified path/folder 'uploaded_item_images'
                 fs.rename(oldImagePath, newImagePath, function (err)
